@@ -20,8 +20,6 @@
       v-on:mouseenter="startScroll()"
       v-on:mouseleave="stopScroll()"
       v-on:touchstart="startScroll()"
-      v-on:touchmove="startScroll()"
-      v-on:touchend="stopScroll()"
       v-bind:style="tbodyStyle"
     >
       <tr v-for="([price, amount], number) in array" :key="number">
