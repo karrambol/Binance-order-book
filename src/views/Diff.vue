@@ -27,7 +27,7 @@ export default {
   name: 'Diff',
   data () {
     return {
-      symbol: 'BTCUSDT',
+      symbol: undefined,
       applied: []
     }
   },
@@ -47,6 +47,9 @@ export default {
 </script>
 <style scoped>
 ul {
+  position: absolute;
   list-style-type: none;
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
 }
 </style>

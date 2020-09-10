@@ -82,7 +82,7 @@ export default {
 <style scoped>
 table {
   border-collapse: collapse;
-  min-height: 90%;
+  max-height: 90%;
 }
 .table__head tr {
   display: table-cell;

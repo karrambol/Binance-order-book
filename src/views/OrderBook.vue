@@ -79,7 +79,7 @@ export default {
 </script>
 <style scoped>
 .order-book {
-  max-height: 100vh;
+  max-height: 90%;
   display: flex;
   justify-content: space-evenly;
 }
