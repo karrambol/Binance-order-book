@@ -1,4 +1,4 @@
-# binance-order-book
+# Binance-order-book
 
 Test task on Vue.js using WebSockets
 
