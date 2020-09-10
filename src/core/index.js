@@ -1,4 +1,4 @@
-import eventBus from './eventBus'
+import bus from './bus'
 import binance from './binance'
 
-export { eventBus, binance }
+export { bus, binance }
