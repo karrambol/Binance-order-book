@@ -24,19 +24,23 @@ export default {
     }
   },
   beforeCreate () {
+    this.asks = []
+    this.bids = []
     this.socket = binance.subscribe(bus.$data.symbol, data => {
-      if (data.u) {
+      if (data.e) {
         if (this.isBuffering) {
           this.changeBuffer.push(data)
         } else {
           bus.$emit('event-applied', data)
           data.a.forEach(el => this.applayChange(this.asks, el))
           data.b.forEach(el => this.applayChange(this.bids, el))
+          this.bids.sort((a, b) => b[0] - a[0])
+          this.asks.sort((a, b) => a[0] - b[0])
         }
       }
     })
 
-    binance.fetch('BTCUSDT').then(response => {
+    binance.fetch(bus.$data.symbol).then(response => {
       this.lastUpdateId = response.lastUpdateId
       this.asks = response.asks
       this.bids = response.bids
@@ -65,7 +69,6 @@ export default {
       }
       if (parseFloat(newData[1]) >= 1e-9 && index === -1) {
         field.push(newData)
-        field.sort((a, b) => b[0] - a[0])
       }
     },
     updateWidth () {
