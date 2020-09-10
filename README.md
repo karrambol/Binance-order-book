@@ -1,4 +1,6 @@
-# market-order-book
+# binance-order-book
+
+Test task on Vue.js using WebSockets
 
 ## Project setup
 ```
