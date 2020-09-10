@@ -26,7 +26,7 @@
     >
       <tr v-for="([price, amount], number) in array" :key="number">
         <td>{{ parseFloat(amount).toFixed(6) }}</td>
-        <td>{{ parseFloat(price).toFixed(3) }}</td>
+        <td>{{ price.slice(0, 9) }}</td>
         <td v-if="showTotal">{{ (amount * price).toFixed(6) }}</td>
       </tr>
     </tbody>
