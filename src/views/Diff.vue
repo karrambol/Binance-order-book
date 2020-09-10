@@ -35,6 +35,8 @@ export default {
     bus.$on('event-applied', event => {
       this.applied = bus.$data.appliedChanges
     })
+    this.applied = bus.$data.appliedChanges
+    this.symbol = bus.$data.symbol
   },
   methods: {
     changeSymbol (event) {
